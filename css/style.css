@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  /* primary  */
+  --soft_blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --very_dark_blue_main: hsl(217, 54%, 11%); /* (main BG) */
+  --very_dark_blue_card: hsl(216, 50%, 16%); /* (card BG) */
+  --very_dark_blue_line: hsl(215, 32%, 27%); /* (line)*/
+  --white: hsl(0, 0%, 100%);
+
+  --border-curve: 10px;
+
+  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.container {
+  background-color: var(--very_dark_blue_main);
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: 0 auto;
+  width: min(350px, 90%);
+}
+
+.card {
+  background-color: var(--very_dark_blue_card);
+  padding: 1em;
+  border-radius: var(--border-curve);
+}
+
+.card img {
+  border-radius: var(--border-curve);
+}
+
+.card h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-block: 0.5em;
+}
+
+.card > p {
+  font-weight: 300;
+  font-size: 0.8em;
+  line-height: 1.4;
+  padding-block-end: 0.6em;
+  color: var(--soft_blue);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-block-end: 1px solid var(--very_dark_blue_line);
+  padding-block-end: 0.8em;
+}
+
+.left > img,
+.right > img {
+  margin-inline-end: 0.4em;
+  display: block;
+}
+
+.left {
+  display: inline-flex;
+  color: var(--cyan);
+}
+
+.right {
+  display: inline-flex;
+  color: var(--soft_blue);
+}
+
+.card--footer {
+  padding-block-start: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.card--footer .img_container {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  margin-inline-end: 1em;
+}
+
+.card p {
+  font-size: 0.8em;
+}
+
+.card--footer span {
+  color: var(--soft_blue);
+}
